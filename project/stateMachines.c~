@@ -1,0 +1,56 @@
+#include <msp430.h>
+#include "stateMachines.h"
+#include "led.h"
+#include "switches.h"
+#include "buzzer.h"
+#include "../lcdLib/lcdutils.h"
+#include "../lcdLib/lcddraw.h"
+
+void state_advance() {
+  myShape(COLOR_ROYAL_BLUE);
+
+  if(state==1){
+    buzzer_set_period(1234);
+    my_color=COLOR_LIME_GREEN;
+  }
+
+  else if(state==2){
+    buzzer_set_period(2419);
+    my_color=COLOR_GOLDENROD;
+  }
+
+  else if (state==3){
+    buzzer_set_period(3999);
+    my_color=COLOR_CHOCOLATE;
+  }
+
+  else if (state==4){
+    buzzer_set_period(2000);
+    my_color=COLOR_SIENNA;
+  }
+  buzzer_set_period(0);
+}
+
+
+void toggle_green()
+{
+  green_on ^= 1;
+  led_changed = 1;
+  led_update();
+}
+
+void toggle_red()
+{
+  red_on ^= 1;
+  led_changed = 1;
+  led_update();
+}
+
+void turn_off_rg()
+{
+  green_on = 0;
+  red_on = 0;
+  led_changed = 1;
+  led_update();
+}
+
