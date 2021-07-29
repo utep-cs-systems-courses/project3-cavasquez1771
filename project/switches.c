@@ -43,18 +43,22 @@ switch_interrupt_handler()
 
   if(switch_state_down_1){
     state=1;
+    buzzer_set_period(4000);
     state_advance();
   }
   if(switch_state_down_2){
     state=2;
+    buzzer_set_period(4000);
     state_advance();
   }
   if(switch_state_down_3){
     state=3;
+    buzzer_set_period(4000);
     state_advance();
   }
   if(switch_state_down_4){
     state=4;
+    buzzer_set_period(4000);
     state_advance();
   }
   

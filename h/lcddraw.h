@@ -5,15 +5,16 @@
 #ifndef lcddraw_included
 #define lcddraw_included
 
+
 extern int myColor;
 extern int offsetX;
 extern int offsetY;
 
-extern void moveLeft(u_int x);
-extern void moveDown(u_int y);
-extern void moveUp(u_int y);
-extern void moveRight(u_int x);
-extern void myShape();
+void moveLeft(u_int x);
+void moveDown(u_int y);
+void moveUp(u_int y);
+void moveRight(u_int x);
+void myShape(u_int color);
 
 /** Draw single pixel at col, row 
  *

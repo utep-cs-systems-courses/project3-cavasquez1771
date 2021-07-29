@@ -7,28 +7,23 @@
 #include "../lcdLib/lcddraw.h"
 
 void state_advance() {
-  myShape(COLOR_ROYAL_BLUE);
 
   if(state==1){
-    buzzer_set_period(1234);
     myColor=COLOR_LIME_GREEN;
   }
 
   else if(state==2){
-    buzzer_set_period(2419);
-    myColor=COLOR_GOLDENROD;
+    myColor=COLOR_FIREBRICK;
   }
 
   else if (state==3){
-    buzzer_set_period(3999);
-    myColor=COLOR_CHOCOLATE;
+    myColor=COLOR_DARK_ORANGE;
   }
 
   else if (state==4){
-    buzzer_set_period(2000);
     myColor=COLOR_SIENNA;
   }
-  buzzer_set_period(0);
+ 
 }
 
 
