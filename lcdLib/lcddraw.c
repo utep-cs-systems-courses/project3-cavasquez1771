@@ -4,6 +4,47 @@
 #include "lcdutils.h"
 #include "lcddraw.h"
 
+int myColor = COLOR_NAVY_BLUE;
+int offsetX = screenWidth/2;
+int offsetY = screenHeight/2;
+
+void moveLeft(u_int x){
+  myShape(COLOR_WHITE);
+  offsetX-=x;
+}
+void moveRight(u_int x){
+  myShape(COLOR_WHITE);
+  offsetX+=x;
+}
+
+void moveUp(u_int y){
+  myShape(COLOR_WHITE);
+  offsetY-=y;
+}
+void moveDown(u_int y){
+  myShape(COLOR_WHITE);
+  offsetY+=y;
+}
+
+void myShape(u_int color) {
+  int size = 15;
+  for (int i = 0; i < size; i++) {
+    fillRectangle(offsetX+i, offsetY+i, i, 1, color;//fills in the gap 
+    fillRectangle(offsetX+i, offsetY-i, i, 1, color);
+     
+    fillRectangle(offsetX+2*i, offsetY+i, i, 1, color);//"tail" part
+    fillRectangle(offsetX+2*i, offsetY-i, i, 1, color);
+
+    if (i  < size/2) {
+      fillRectangle(offsetX+i, offsetY+i, size -i, 1, color);//middle "cockpit"
+      fillRectangle(offsetX+i, offsetY-i, size -i, 1, color);
+    }
+  }
+  for (int i = 0; i < size*1.2; i++) {
+    fillRectangle(offsetX+0.8*i, offsetY+i, i, 1, color);//wings
+    fillRectangle(offsetX+0.8*i, offsetY-i, i, 1, color);
+  }  
+}
 
 /** Draw single pixel at x,row 
  *
