@@ -4,7 +4,7 @@
 #include "lcdutils.h"
 #include "lcddraw.h"
 
-int myColor = COLOR_NAVY_BLUE;
+int myColor = COLOR_NAVY;
 int offsetX = screenWidth/2;
 int offsetY = screenHeight/2;
 
@@ -29,7 +29,7 @@ void moveDown(u_int y){
 void myShape(u_int color) {
   int size = 15;
   for (int i = 0; i < size; i++) {
-    fillRectangle(offsetX+i, offsetY+i, i, 1, color;//fills in the gap 
+    fillRectangle(offsetX+i, offsetY+i, i, 1, color);//fills in the gap 
     fillRectangle(offsetX+i, offsetY-i, i, 1, color);
      
     fillRectangle(offsetX+2*i, offsetY+i, i, 1, color);//"tail" part
