@@ -7,26 +7,29 @@
 #include "../lcdLib/lcddraw.h"
 
 void state_advance() {
+  switch (state) {
+  case 1:
+    myColor = COLOR_LIME_GREEN;
+    break;
 
-  if(state==1){
-    myColor=COLOR_LIME_GREEN;
-  }
+  case 2:
+    myColor = COLOR_FIREBRICK;
+    break;
 
-  else if(state==2){
-    myColor=COLOR_FIREBRICK;
-  }
+  case 3:
+    myColor = COLOR_DARK_ORANGE;
+    break;
 
-  else if (state==3){
-    myColor=COLOR_DARK_ORANGE;
-  }
+  case 4:
+    myColor = COLOR_SIENNA;
+    break;
 
-  else if (state==4){
-    myColor=COLOR_SIENNA;
+  default:
+    myColor = COLOR_BLACK;
   }
- 
 }
 
-
+  /*
 void toggle_green()
 {
   green_on ^= 1;
@@ -49,3 +52,4 @@ void turn_off_rg()
   led_update();
 }
 
+*/

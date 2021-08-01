@@ -22,6 +22,6 @@ clean:
 
 led.o: led.c led.h
 #wdInterruptHandler.o: stateMachines.h
-stateMachines.o: led.h stateMachines.h
+stateMachines.o: led.h stateMachines.h stateMachines.s
 switches.o: switches.h
 buzzer.o: buzzer.h 
